@@ -1,0 +1,15 @@
+name: Hello World Workflow
+
+# Воркфлоу запускается при каждом пуше в репозиторий
+on: [push]
+
+jobs:
+  run-make-command:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Check out repository code
+        uses: actions/checkout@v4
+
+      - name: Run say-hello command
+        run: make say-hello
